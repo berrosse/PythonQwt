@@ -1,0 +1,141 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>PythonQwt by PierreRaybaut</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-light.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>PythonQwt</h1>
+        <p>Qt plotting widgets for Python (pure Python reimplementation of Qwt C++ library)</p>
+
+        <p class="view"><a href="https://github.com/PierreRaybaut/PythonQwt">View the Project on GitHub <small>PierreRaybaut/PythonQwt</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/PierreRaybaut/PythonQwt/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/PierreRaybaut/PythonQwt/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/PierreRaybaut/PythonQwt">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a id="pythonqwt" class="anchor" href="#pythonqwt" aria-hidden="true"><span class="octicon octicon-link"></span></a>PythonQwt</h1>
+
+<h2>
+<a id="purpose-and-motivation" class="anchor" href="#purpose-and-motivation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Purpose and Motivation</h2>
+
+<p>The <code>PythonQwt</code> project was initiated to solve -at least temporarily-
+the obsolescence issue of <code>PyQwt</code> (the Python-Qwt C++ bindings library)
+which is no longer maintained. The idea was to translate the original
+Qwt C++ code to Python and then to optimize some parts of the code by
+writing new modules based on NumPy and other libraries.</p>
+
+<p>The <code>PythonQwt</code> package consists of a single Python package named
+<code>qwt</code> and of a few other files (examples, doc, ...).</p>
+
+<h2>
+<a id="copyrights" class="anchor" href="#copyrights" aria-hidden="true"><span class="octicon octicon-link"></span></a>Copyrights</h2>
+
+<h4>
+<a id="main-code-base" class="anchor" href="#main-code-base" aria-hidden="true"><span class="octicon octicon-link"></span></a>Main code base</h4>
+
+<ul>
+<li>Copyright © 2002 Uwe Rathmann, for the original Qwt C++ code</li>
+<li>Copyright © 2015 Pierre Raybaut, for the Qwt C++ to Python
+translation and optimization</li>
+<li>Copyright © 2015 Pierre Raybaut, for the PythonQwt specific and
+exclusive Python material</li>
+</ul>
+
+<h4>
+<a id="pyqt-pyside-and-python2python3-compatibility-modules" class="anchor" href="#pyqt-pyside-and-python2python3-compatibility-modules" aria-hidden="true"><span class="octicon octicon-link"></span></a>PyQt, PySide and Python2/Python3 compatibility modules</h4>
+
+<ul>
+<li>Copyright © 2009-2013 Pierre Raybaut</li>
+<li>Copyright © 2013-2015 The Spyder Development Team</li>
+</ul>
+
+<h4>
+<a id="some-examples" class="anchor" href="#some-examples" aria-hidden="true"><span class="octicon octicon-link"></span></a>Some examples</h4>
+
+<ul>
+<li>Copyright © 2003-2009 Gerard Vermeulen, for the original PyQwt code</li>
+<li>Copyright © 2015 Pierre Raybaut, for the PyQt5/PySide port and
+further developments (e.g. ported to PythonQwt API)</li>
+</ul>
+
+<h2>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span class="octicon octicon-link"></span></a>License</h2>
+
+<p>The <code>qwt</code> Python package was partly (&gt;95%) translated from Qwt C++
+library: the associated code is distributed under the terms of the LGPL
+license. The rest of the code was either wrote from scratch or strongly
+inspired from MIT licensed third-party software.
+See included LICENSE file for more details about licensing terms.</p>
+
+<h2>
+<a id="overview" class="anchor" href="#overview" aria-hidden="true"><span class="octicon octicon-link"></span></a>Overview</h2>
+
+<p>The <code>qwt</code> package is a pure Python implementation of <code>Qwt</code> C++ library 
+with the following limitations.</p>
+
+<p>The following <code>Qwt</code> classes won't be reimplemented in <code>qwt</code> because more
+powerful features already exist in <code>guiqwt</code>: <code>QwtPlotZoomer</code>, 
+<code>QwtCounter</code>, <code>QwtEventPattern</code>, <code>QwtPicker</code>, <code>QwtPlotPicker</code>.</p>
+
+<p>Only the following plot items are currently implemented in <code>qwt</code> (the 
+only plot items needed by <code>guiqwt</code>): <code>QwtPlotItem</code> (base class), 
+<code>QwtPlotItem</code>, <code>QwtPlotMarker</code>, <code>QwtPlotSeriesItem</code> and <code>QwtPlotCurve</code>.</p>
+
+<p>See "Overview" section in <a href="http://pythonhosted.org/PythonQwt/">documentation</a> 
+for more details on API limitations when comparing to Qwt.</p>
+
+<h2>
+<a id="dependencies" class="anchor" href="#dependencies" aria-hidden="true"><span class="octicon octicon-link"></span></a>Dependencies</h2>
+
+<h3>
+<a id="requirements" class="anchor" href="#requirements" aria-hidden="true"><span class="octicon octicon-link"></span></a>Requirements</h3>
+
+<ul>
+<li>Python &gt;=2.6 or Python &gt;=3.0</li>
+<li>PyQt4 &gt;=4.4 or PyQt5 &gt;= 5.5</li>
+<li>NumPy &gt;= 1.5</li>
+<li>guidata &gt;= 1.7 for the GUI-based test launcher</li>
+</ul>
+
+<h2>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installation</h2>
+
+<p>From the source package:</p>
+
+<div class="highlight highlight-source-python"><pre>python setup.py install</pre></div>
+
+<h2>
+<a id="examplestests" class="anchor" href="#examplestests" aria-hidden="true"><span class="octicon octicon-link"></span></a>Examples/tests</h2>
+
+<p>The GUI-based test launcher may be executed from Python:</p>
+
+<div class="highlight highlight-source-python"><pre><span class="pl-k">from</span> qwt <span class="pl-k">import</span> tests
+tests.run()</pre></div>
+
+<p>or from the command line: <code>PythonQwt-tests</code>.</p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/PierreRaybaut">PierreRaybaut</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
