@@ -947,7 +947,7 @@ class QwtPlot(QFrame, QwtPlotDict):
         if self.__data.autoReplot:
             self.replot()
     
-    def setAutoReplot(self, tf):
+    def setAutoReplot(self, tf=True):
         """
         Set or reset the autoReplot option
 
